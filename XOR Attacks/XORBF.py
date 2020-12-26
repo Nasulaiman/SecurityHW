@@ -23,7 +23,7 @@ def allposibilewords(characters, length):
     for let in product(characters, repeat=length):
         yield ''.join(let)
 
-# CALCULATE CIPHERTEXT LENGTH
+# CALCULATING REPEATED KEY LENGTH 
 def lengthkey(key):
     
     keylength = len(enc_str) / len(key)
@@ -32,7 +32,7 @@ def lengthkey(key):
 # BRUTE FORCE ATTACK FUNCTION
 def generater(ciphertext):
     
-    # LOWERCASE ENGLISH LETTERS DICTIONARY, YOU CAN ADD HERE YOUR DICTIONARY
+    # ENGLISH DICTIONARY LOWERCASE LETTERS
     letters = "abcdefghijklmnopqrstuvxyz"
     
     for wordlen in range(2, 4):
