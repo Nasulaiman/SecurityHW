@@ -60,7 +60,6 @@ python-dateutil==2.8.1
 pytz==2020.5
 pywin32==300
 pywinpty==0.5.7
-
 pyzmq==22.0.2
 qtconsole==5.0.2
 QtPy==1.9.0
