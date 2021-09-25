@@ -93,12 +93,6 @@ P = [
     19, 13, 30, 6, 22, 11, 4, 25]
 
 
-# In[ ]:
-
-
-# In[2]:
-
-
 def bytes2binary(hex_input,case=0):
     int_input = int.from_bytes(hex_input, byteorder='big')
     target_length = len(bin(int_input)[2:]) + (8 - len(bin(int_input)[2:]) % 8) % 8
@@ -110,14 +104,6 @@ def bytes2binary(hex_input,case=0):
         #while b[i] == 0:
         #target_length = target_length + 8
         #i++
-        
-
-
-# In[ ]:
-
-
-# In[3]:
-
 
 def binary2bytes(bin_input):
     scr_length = len(bin_input) + (8 - len(bin_input) % 8) % 8
@@ -126,23 +112,11 @@ def binary2bytes(bin_input):
     return bytes(bin_input_to_int)
 
 
-# In[ ]:
-
-
-# In[4]:
-
-
 def bin_xor(bin1, bin2):
     length = max(len(bin1), len(bin2))
     bin1 = int('0b' + bin1, 2)
     bin2 = int('0b' + bin2, 2)
     return (bin(bin1 ^ bin2)[2:]).zfill(length)
-
-
-# In[ ]:
-
-
-# In[5]:
 
 
 def create_DES_subkeys(key):
@@ -171,18 +145,6 @@ def create_DES_subkeys(key):
     Sub_keys = [''.join([Sub_keys_concatenated[numkey][value - 1] for value in PC2]) for numkey in range(0, 16)]
 
     return Sub_keys
-
-
-# In[ ]:
-
-
-# In[ ]:
-
-
-# In[ ]:
-
-
-# In[6]:
 
 
 def S_box_P(E_R_data_Gr):
@@ -214,12 +176,6 @@ def f(R_data, key):
     # Divide to six bit group
     E_R_data_X_Key_6b_group = [E_R_data_X_Key[i:i + 6] for i in range(0, len(E_R_data_X_Key), 6)]
     return S_box_P(E_R_data_X_Key_6b_group)
-
-
-# In[ ]:
-
-
-# In[7]:
 
 
 def encrypt_DES(Message, key):
@@ -273,27 +229,6 @@ def encrypt_DES(Message, key):
     return binary2bytes(Cipher)
 
 
-# In[ ]:
-
-
-# In[ ]:
-
-
-# In[ ]:
-
-
-# In[8]:
-
-
-# In[ ]:
-
-
-# In[ ]:
-
-
-# In[9]:
-
-
 def are_random_tests_all_passes(testtimes):
     result = []
     for i in range(0, testtimes):
@@ -306,15 +241,8 @@ def are_random_tests_all_passes(testtimes):
     return all([results for results in result])
 
 
-# In[10]:
-
-
 print(are_random_tests_all_passes(100))
 
-# In[ ]:
-#print(bytes2binary(b'\xf0\x80'))
-
-# In[ ]:
 
 
 
